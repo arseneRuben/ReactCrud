@@ -2,19 +2,22 @@
 const codeurs = [
 	{
 		id: "1",
-		name: "Shivansh",
+		firstname: "Shivansh",
+		lastname: "Olympio",
         experience:"JUNIOR"
 	},
 	{
 		id: "2",
-		name: "Simran",
+		firstname: "Alain",
+		lastname: "Herzt",
         experience:"SEINIOR"
 	},
 	{
 		id: "3",
-		Name: "Aakash",
+		firstname: "Guy",
+		lastname: "Carlos",
         experience:"JUNIOR"
 	},
 ];
 
-export default array;
+export default codeurs;
