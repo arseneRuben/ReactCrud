@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
-export const baseURL = "http://localhost:8000";
+export const baseURL = "http://localhost:5000";
 
 function Home() {
 	let history = useNavigate();
