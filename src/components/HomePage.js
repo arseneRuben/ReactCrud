@@ -5,10 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
-
 export const baseURL = "http://localhost:8000";
 
-function Home() {
+function HomePage() {
 	let history = useNavigate();
 	const [codeurs, setCodeurs] = useState([]); 
 
@@ -23,9 +22,12 @@ function Home() {
 
 
 	function setID(id, name, experience) {
-		
+		history(    `${baseURL}/codeurs`);
 	}
 
+	
+
+	
 	// Deleted function - functionality
 	// for deleting the entry
 	/*function deleted(id) {
@@ -51,13 +53,14 @@ function Home() {
 						<th>Name</th>
 						<th>Prenom</th>
 						<th>Experience</th>
+						<th colSpan="3">Actions</th>
 					</tr>
 				</thead>
 				<tbody>
 					
 					{codeurs.map((item) => {
 						return (
-							<tr>
+							<tr key={item.id}>
 								<td>{item.firstname}</td>
 								<td>{item.lastname}</td>
 
@@ -68,6 +71,17 @@ function Home() {
 									value in the jsx with 
 									onclick event */}
 								<td>
+									
+										<Button
+											
+											variant="info"
+											
+										>
+											Show
+										</Button>
+									
+								</td>
+								<td>
 									<Link to={`/edit`}>
 										<Button
 											onClick={(e) =>
@@ -77,7 +91,7 @@ function Home() {
 													item.experience
 												)
 											}
-											variant="info"
+											variant="warning"
 										>
 											Update
 										</Button>
@@ -111,4 +125,4 @@ function Home() {
 	);
 }
 
-export default Home;
+export default HomePage;
